@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria FlexBox</title>
+
+    <style>
+        body{
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }   
+
+        .container {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1 1 300px;
+            margin: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover{
+            transform: scale(1.05);
+        }
+
+        img {
+            border-radius: 8px;
+            display: block;
+            height: auto;
+            width: 100%;
+        }
+
+        /* /////////////////////// */
+        /* MEDIA QUERY RESPONSIVO */
+        /* ///////////////////// */
+
+        @media screen and (max-width: 600px) {
+            .container {
+                flex-basis: calc(100% - 20px);
+            }
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <h1>Ignacio Aguayo</h1>
+
+    <div class="gallery" id="flexGallery">
+        <div class="container">
+            <img src="imagen1.webp" alt="imagen 1">
+        </div>
+        <div class="container">
+            <img src="imagen2.webp" alt="imagen 2">
+        </div>
+        <div class="container">
+            <img src="imagen3.webp" alt="imagen 3">
+        </div>
+        <div class="container">
+            <img src="imagen4.webp" alt="imagen 4">
+        </div>
+        <div class="container">
+            <img src="imagen1.webp" alt="imagen 5">
+        </div>
+        <div class="container">
+            <img src="imagen2.webp" alt="imagen 6">
+        </div>
+        <div class="container">
+            <img src="imagen3.webp" alt="imagen 7">
+        </div>
+        <div class="container">
+            <img src="imagen4.webp" alt="imagen 8">
+        </div>
+
+
+        <button onclick="toggleLayout()"> Pulsa y cambia el diseño</button>
+
+    </div>
+
+</body>
+
+    <script>
+        function toggleLayout() {
+            let gallery = document.getElementById('flexGallery');
+            gallery.classList.toggle('grid-layout');
+        }
+    </script>
+</html>
